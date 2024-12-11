@@ -6,6 +6,7 @@ export default {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './sections/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -17,7 +18,10 @@ export default {
           lg: '4rem',
         },
       },
-      colors: {},
+      colors: {
+        primary: '#0077cc',
+        secondary: '#001524',
+      },
       fontFamily: {
         lato: ['var(--font-lato)', 'sans-serif'],
         montserrat: ['var(--font-montserrat)', 'sans-serif'],
