@@ -18,6 +18,10 @@ export default {
         },
       },
       colors: {},
+      fontFamily: {
+        lato: ['var(--font-lato)', 'sans-serif'],
+        montserrat: ['var(--font-montserrat)', 'sans-serif'],
+      },
     },
   },
   plugins: [],
