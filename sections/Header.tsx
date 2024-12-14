@@ -1,34 +1,41 @@
 'use client';
 
+import { AnimatePresence, motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
+import { Button } from '@/components/ui/button';
 import { NAV_LINKS } from '@/constants';
 import { cn } from '@/lib/utils';
-import logo from '@/public/assets/images/logo.svg';
+import logo from '@/public/assets/images/logo.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header>
-      <div className="container flex justify-between items-center py-8">
-        <Link href="/" className="relative h-auto w-[60px]">
+    <header className="">
+      <div className="container flex justify-between items-center py-4 bg-transparent">
+        <Link href="/" className="relative h-auto w-[120px]">
           <Image src={logo} alt="logo" />
         </Link>
 
-        <nav className="hidden">
-          <ul className="flex items-center">
+        <nav className="hidden lg:inline-flex">
+          <ul className="flex items-center gap-16">
             {NAV_LINKS.map((link) => (
               <li key={link.label}>
-                <Link href={link.href}>{link.label}</Link>
+                <Link
+                  href={link.href}
+                  className="text-secondary font-semibold text-xl"
+                >
+                  {link.label}
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
 
-        <div>
+        <div className="md:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -39,7 +46,7 @@ const Header = () => {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="feather feather-menu md:hidden mr-2"
+            className="feather feather-menu  mr-2"
             onClick={() => setIsOpen(!isOpen)}
           >
             <line
@@ -71,7 +78,29 @@ const Header = () => {
             ></line>
           </svg>
         </div>
+
+        <div className="hidden lg:inline-flex">
+          <Button className="bg-primary text-white">
+            <Link href="#contact">Contact Us</Link>
+          </Button>
+        </div>
       </div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0 }}
+            animate={{ height: 'auto' }}
+            exit={{ height: 0 }}
+            className="flex flex-col items-center overflow-hidden"
+          >
+            {NAV_LINKS.map((link) => (
+              <Link href={link.href} key={link.label} className="py-2">
+                {link.label}
+              </Link>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
