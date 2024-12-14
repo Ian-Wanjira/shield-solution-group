@@ -21,6 +21,8 @@ export default {
       colors: {
         primary: '#0077cc',
         secondary: '#001524',
+        heroBg: '#f7fcff',
+        blue: '#0095FF',
       },
       fontFamily: {
         lato: ['var(--font-lato)', 'sans-serif'],
