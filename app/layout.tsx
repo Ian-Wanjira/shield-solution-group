@@ -30,7 +30,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'min-h-screen antialiased',
+          'min-h-screen antialiased bg-heroBg',
           lato.variable,
           montserrat.variable,
         )}
