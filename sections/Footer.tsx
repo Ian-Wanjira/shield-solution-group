@@ -60,7 +60,7 @@ const Footer = () => {
                   />
                 </svg>
               </Link>
-              <Link href="/">
+              <Link href="https://x.com/shieldsolution7" target="__blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -97,7 +97,10 @@ const Footer = () => {
                   </g>
                 </svg>
               </Link>
-              <Link href="/">
+              <Link
+                href="https://www.tiktok.com/@shieldsolutiongroup"
+                target="_blank"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="28"
